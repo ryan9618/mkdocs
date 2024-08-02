@@ -1,0 +1,42 @@
+#[Info]
+ site_name: RevinBlog
+ #site_url: #网站地址
+ site_author: Revin
+#[UI]
+ theme:
+   name: material
+   palette:
+    #primary: blue grey
+  
+    - scheme: default # 日间模式
+      primary: grey # 上方的
+      accent: cyan # 链接等可交互元件的高亮色
+      toggle:
+        icon: material/weather-night # 图标
+        name: 切换至夜间模式 # 鼠标悬浮提示
+    - scheme: slate # 夜间模式
+      primary: black 
+      accent: cyan
+      toggle:
+     
+ 
+ language: zh # 一些提示性的文字会变成中文
+  
+ 
+
+
+ edit_uri: edit/main/docs # 编辑按钮跳转的链接 
+ repo_url: https://github.com/Wcowin/mymkdocs # 右上角点击跳转的链接
+ repo_name: Wcowin.github.io # 右上角的名字
+
+
+ title: 
+ tags:
+  - Tesing
+  - Ollal
+  - docker
+
+
+ hide:
+  #- navigation # 显示右侧导航
+  - toc #显示左侧导航
