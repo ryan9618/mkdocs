@@ -1,0 +1,1570 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Revin">
+      
+      
+      
+        <link rel="prev" href="../../Docker/Docker-ml/">
+      
+      
+        <link rel="next" href="../../Soft/win10_win11irm/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30">
+    
+    
+      
+        <title>Gitml - RevinBlog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="RevinBlog" class="md-header__button md-logo" aria-label="RevinBlog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RevinBlog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Gitml
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="cyan"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Wcowin/mymkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Wcowin.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="RevinBlog" class="md-nav__button md-logo" aria-label="RevinBlog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    RevinBlog
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Wcowin/mymkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Wcowin.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome Revivn MkDocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/web/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tech notes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Tech notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1_1" id="__nav_4_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Rust
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Rust
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tech-notes/Rust/Linux-rusthj/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux下超轻量级Rust开发环境搭建
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tech-notes/Rust/Rust-jgt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rust数据结构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tech-notes/Rust/Rust-lenbj/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rust学习笔记之基础概念
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tech-notes/Rust/rust-vec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rust数据结构用法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tech-notes/Rust/rust_notes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rust学习笔记之基础概念
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1_2" id="__nav_4_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tech-notes/python/68fun/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    68fun
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tech-notes/python/dash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dash
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tech-notes/python/py_qnotes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    用法查询笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tech-notes/python/pylen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pylen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tech-notes/python/python_20code/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    python_20code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tech-notes/python/python_20code_y/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    python_20code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tech-notes/python/rnlist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RNlist
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../itab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BookmarkSC百个收藏
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rnbookmark20030312/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RNBookmark20030312
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_3" id="__nav_4_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Docker
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Docker
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Docker/Docker-jc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker jc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Docker/Docker-ml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker ml
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_4" id="__nav_4_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Git
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Gitml
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_5" id="__nav_4_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Soft
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Soft
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Soft/win10_win11irm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    win10_win11永久激活-这个工具轻
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Develop
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Develop
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../develop/markdown/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Markdown
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../develop/rusddev/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rusddev
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../develop/rustban-Cal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rust版行事历
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<p>一、git remote add origin的基础</p>
+<p>使用“git remote add origin”指令，可以轻松地将本地项目连接到远程Git仓库
+二、git remote add origin的用法</p>
+<p>“git remote add origin”指令可以使用以下语法：</p>
+<pre><code>git remote add origin &lt;远程Git仓库地址&gt;
+</code></pre>
+<p>其中，&lt;远程Git仓库地址&gt;是你的远程Git仓库的网址。</p>
+<p>对于如何获取远程Git仓库地址，我们举例说明：</p>
+<p>比如，你的远程Git仓库地址为：</p>
+<p>https://github.com/your/your.git</p>
+<p>那么你在本地使用“git remote add origin”指令的语法就应该是：</p>
+<pre><code>git remote add origin https://github.com/your/your.git
+</code></pre>
+<p>执行这条指令之后，你的本地项目就与远程Git仓库建立了连接，你就可以开始对你的代码进行版本追踪和协作开发了。
+三、git remote add origin的一些常用操作
+1. 更改默认的远程仓库</p>
+<p>在项目中可能存在多个远程仓库，如果你想更改默认仓库，可以使用如下指令：</p>
+<pre><code>git remote set-url origin &lt;新的远程Git仓库地址&gt;
+</code></pre>
+<ol>
+<li>查看当前的远程仓库</li>
+</ol>
+<p>如果你想查看当前项目的远程仓库，可以使用如下指令：</p>
+<p>git remote -v</p>
+<ol>
+<li>删除远程仓库</li>
+</ol>
+<p>如果你需要删除已经添加的远程仓库，可以使用如下指令：</p>
+<pre><code>git remote rm origin
+</code></pre>
+<p>————————————————</p>
+<p>git clone 复制的连接
+③下拉仓库</p>
+<p>git clone 复制的连接</p>
+<p>④将mkdocs生成的项目my-project移到仓库文件夹内</p>
+<p>⑤上传</p>
+<p>git add .</p>
+<h1 id="_1">加入到暂存区</h1>
+<p>git commit -m up</p>
+<h1 id="_2">提交到版本库</h1>
+<p>git push</p>
+<h1 id="_3">上传</h1>
+<h1 id="github">Github</h1>
+<p>…or create a new repository on the command line</p>
+<p>echo "# mk-wiki" &gt;&gt; README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/ryan6981/mk-wiki.git
+git push -u origin main</p>
+<p>…or push an existing repository from the command line</p>
+<p>git remote add origin https://github.com/ryan6981/mk-wiki.git
+git branch -M main
+git push -u origin main</p>
+<p>引言</p>
+<p>Git 和repo 极简操作指南小结…
+一、Git 基本操作
+1、下载拷贝代码
+1.1、git clone ssh:// 或者https：// 从代码仓库拷贝</p>
+<pre><code>复制指定单一分支
+
+git clone -b &lt;branch-name&gt; --single-branch https://xxx/xx/repo.git
+    1
+</code></pre>
+<p>git clone git@xxx:main/xx.git --depth=1 --branch=release-client-5.11.x --single-branch</p>
+<ul>
+<li>拷贝最新一次提交</li>
+</ul>
+<p>```shell
+git clone --depth=1 https://xxx/xxxx/repo.git</p>
+<pre><code>1
+2
+3
+4
+5
+</code></pre>
+<p>1.2、git pull 和git fetch 同步更新</p>
+<p>git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;</p>
+<p>git fetch &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;</p>
+<pre><code>1
+2
+3
+4
+
+git pull —— 使用给定的参数运行git fetch，并调用git merge将检索到的分支头合并到当前分支中即git pull= git fetch +git merge
+
+# 将远程主机origin的master分支拉取过来，与本地的brantest分支合并
+git pull origin master:brantest
+    1
+    2
+
+git fetch——不会进行合并执行后需要手动执行git merge合并分支
+</code></pre>
+<p>2、提交代码
+2.1、git status 查看本次修改的情况</p>
+<pre><code>repo的话用 repo status
+</code></pre>
+<p>2.2、git diff --cached 查看暂存区和本地最近的版本 (commit) 的 不同 和 git diff HEAD 查看工作区、暂存区 和本地最近的版本 (commit) 的 different (不同)
+2.3、git add 添加修改到暂存区和git rm --cached将修改从暂存区移除</p>
+<p>git add .
+git add file.txt file1.java xxx.x
+git rm --cached file.txt file1.java xxx.x</p>
+<pre><code>1
+2
+3
+</code></pre>
+<p>2.4、git commit 提交本次修改到本地仓库 / git commit --amend 修改最近一次 commit 的描述</p>
+<p>git commit --amend 可以更新最近一次commit的描述，如果此次有修改也会顺道把此次新增的修改一道commit。
+2.5、git push</p>
+<p>推送到远端代码仓库</p>
+<h1 id="pushorigin-mutl_volume">把本地当前的分支push到原创origin 的临时分支mutl_volume （不需要先创建临时分支）</h1>
+<p>git push origin HEAD:refs/heads/mutl_volume</p>
+<pre><code>1
+2
+</code></pre>
+<p>3、回退本地仓库代码
+3.1、git reset</p>
+<pre><code>git reset—— 撤销当前暂存区的修改，即撤销当前add 操作
+
+git reset --hard &lt; HEAD &gt; 或 &lt; commitId &gt; ——放弃当前的修改，也可以用于放弃制定commitId的修改（默认-mixed参数），一般用于未push到远程代码仓库的本地修改，即撤销暂存区的修改，抛弃当前的修改。
+
+git reset – mixed HEAD^ ——回退至上个版本，它将重置HEAD到另外一个commit,并且重置暂存区以便和HEAD相匹配，但工作区不会被更改。
+
+git reset – soft HEAD~3 ——回退至三个版本之前，只回退了commit的信息，暂存区和工作区与回退之前保持一致，如果还要提交，直接commit即可
+
+reset 命令会抹去某个 commit id 之后的所有 commit
+</code></pre>
+<p>3.2、git revert commitId 抹掉某个commit的修改</p>
+<p>回退具体的某个commitId，用于紧急回退到某个有问题的提交，以新增一个 commit 的方式还原某一个 commit 的修改
+3.3、git checkout</p>
+<p>回退到历史的某个节点，通常用于代码整体回退到某个历史节点，回退某个文件或者回退到上一个分支。</p>
+<p>git checkout file1 file2
+git checkout .
+git checkout -</p>
+<pre><code>1
+2
+3
+</code></pre>
+<p>4、同步代码
+4.1、git cherry-pick</p>
+<p>同步单个节点
+4.2、git merge</p>
+<p>同步整个分支
+4.3、git pull
+4.4、git rebase（不推荐的方式）</p>
+<p>同步整个分支。
+6、git branch分支管理</p>
+<pre><code>git branch -r —— 列出所有远程分支
+git branch -a ——查看所有分支
+git checkout —— 切换分支
+git checkout -b &lt; new_branch &gt;—— 创建并切换到本地新分支
+git checkout -b &lt; branch-name &gt; origin/&lt; branch-name &gt;——从远程分支中创建并切换到本地分支
+git merge —— 合并分支
+git branch –d —— 删除本地分支
+git push origin --delete &lt; remote-branch &gt; 或 git push origin :&lt; remote-branch &gt;——删除远程分支
+git remote prune origin——远程删除了分支本地也想删除
+git branch -m &lt; new-branch &gt;——重命名本地分支
+</code></pre>
+<p>7、git tag</p>
+<pre><code>git tag &lt; version-number &gt; 或 git tag -a —— 添加标签
+
+默认 tag 是打在最近的一次 commit 上，如果需要指定 commit 打 tag
+
+git tag -a &lt;version-number&gt; -m "v1.0 发布(描述)" &lt;commit-id&gt;
+    1
+
+git describe --tags --abbrev=0 ——展示当前分支的最近的 tag
+
+git tag -l —— 查看标签
+
+git tag -d &lt; tagname &gt;—— 删除本地标签
+
+git push origin --delete tag &lt; tagname &gt;—— 删除远程标签
+
+git checkout -b branch_name tag_name——切回到指定分支的指定tag
+
+git push origin --tags——推送本地所有标签到远程服务器
+</code></pre>
+<p>8、git stash 或者git apply 江湖救急，临时保存一下代码</p>
+<p>如果现有的修改需要保留，则可以参考临时保存一下代码的方法，全部add，commit，然后使用本地分支保存。</p>
+<p>git add --all
+git commit -s 
+git checkout -b new_temp_branch
+git checkout 原来的分支   或者 使用repo sync -d .</p>
+<pre><code>1
+2
+3
+4
+
+git stash的内部原理其实也就是临时分支的方法即git checkout -b
+</code></pre>
+<p>将代码保存到临时分支，那么保存后如何回到原来的分支呢？如果是repo管理的仓库，则使用命令 repo sync -d .，当然也可以使用下面的git checkout命令，如果是纯git管理的仓库，则使用命令git checkout 原来的分支，临时分支使用完毕后，如果要删除，则 git branch -D 临时分支名。
+9、git reflog +git cherry-pick 乾坤大挪移，找回丢失的节点和迁移代码</p>
+<p>git也有回收站机制，凡是只要commit过的节点，都可以通过git reflog命令查看提交记录，</p>
+<p>@yanfa200_ubuntu14-nas-18115:jdk8-181009:~/crazymo/forWork/LocationService$ git reflog
+7a1903d HEAD@{0}: pull: Merge made by the 'recursive' strategy.
+aa903dc HEAD@{1}: commit: fixed merged ag
+d453eee HEAD@{2}: commit (merge): fixed merged
+303f231 HEAD@{3}: commit: 内部逻辑优化
+2cf9db3 HEAD@{4}: commit: 合并完成，进行内部优化前的备份
+1a141c7 HEAD@{5}: clone: from git@yfgitlab.crazymo.com:MSDD/Service/LocationService.git</p>
+<pre><code>1
+2
+3
+4
+5
+6
+7
+8
+</code></pre>
+<p>如上所示可以看到所有的文件上传到暂存区的操作记录：假如要想找回的是{3}对应的提交那么有两种方式：
+9.1、reset Head@{3} 配合 git reset --hard HEAD</p>
+<pre><code>首先git reset Head@{3} 将头指针指向{3}索引处
+再git reset --hard HEAD 找回
+</code></pre>
+<p>9.2、git cherry-pick 某节点hash</p>
+<pre><code>git cherry-pick 某节点hash
+</code></pre>
+<p>git cherry-pick的时候，有时会提示有冲突，则按照git 解冲突的方法，修改好代码，并git add 提交到暂存区。然后执行 git cherry-pick --continue方法即可，通过git reflog + git cherry-pick, 我们就可以轻松找回那些任何前面提交过的节点。
+10、重复利用被abandon 的commit
+废物利用——如何处理被abandon的提交点</p>
+<p>代码提交过程中，由于是多人协作，容易出现因为代码冲突或者其他原因导致代码无法合入，而被评审人abandon。这种情况下，如何尽可能利用既有的提交节点呢？
+10.1. 更新本地代码到最新服务器节点</p>
+<p>如果是repo管理下的仓库</p>
+<pre><code>repo sync -d .
+</code></pre>
+<p>如果是单git仓库，</p>
+<pre><code>git reset --hard #hash节点是被abandon的节点的父节点。
+
+git pull
+</code></pre>
+<p>扩展：为什么要更新代码？更新代码的目的是为了与服务器保持一致，才不容易造成冲突。
+10.2. 找回被abandon的点</p>
+<p>基于<a href="#git reflog +git cherry-pick 乾坤大挪移，找回丢失的节点和迁移代码">乾坤大挪移手法</a>，找回被abandon的点，并合并到最新的代码上。
+10.3. 重新修改代码并提交</p>
+<p>根据abandon原因，做相应的代码修改。修改完成后，使用以下命令，完成代码提交</p>
+<pre><code>git commit --amend #注意，必须加选项–amend, 要不然就是新增一个commit了，在配合Gerrit使用时提交信息中注意删除change-id信息，不然提交评审时会直接被打回。
+</code></pre>
+<p>Description: add setSystemCurrentTimeHookEx Function to support setCurrentTime with millsecond
+Solution   :
+Notes      :</p>
+<p>Change-Id: Id0992cd0a79720d6922fb59b8d9070a1efd23400  # 这一行必须删除</p>
+<pre><code>1
+2
+3
+4
+5
+</code></pre>
+<p>11、git rm 将文件从暂存区中移除</p>
+<p>git rm 命令相当于直接删除文件并将该操作add到暂存区，所以就相当于直接从暂存区移除指定文件。
+11.1、git rm --cached 从暂存区移初之前已经add 过的文件</p>
+<pre><code>-r——表示移除的是目录
+</code></pre>
+<p>当需要在移除版本控制中的指定文件并需要在工作区中保留该文件时，需要带–cached 参数。常用于git忽略已经被提交过的文件，先git rm --cached <file>，然后更新.gitignore忽略掉目标文件，最后git commit -m。
+12、多项目并行开发</p>
+<p>只有一份代码，如何实现多项目并行开发，比较优雅的方法，创建本地分支。
+11.1、本地分支法
+11.1.1、 基于远程分支，创建一个本地分支</p>
+<pre><code>git checkout -b XXX origin/XXX
+</code></pre>
+<p>一般我们推荐本地分支名和远程分支名一样，直观好理解。基于分支进行多项目并行开发时，切记切换前保证代码是干净状态。
+11.1.2、保存工作了一半的成果到本地分支</p>
+<p>干了一半，需要切换到其他分支，则直接将修改的代码全部添加提交。注意，只是commit，不push到远程代码服务器。
+11.1.3、 切换到其他项目的分支</p>
+<pre><code>git checkout -b YYY origin/YYY
+</code></pre>
+<p>如果原来YYY已经创建好了，则直接git checkout YYY即可，不需要新建分支。
+二、配置commit 命令自动补全和提交模板
+1、配置git命令自动补全</p>
+<p>将git_completed文件放置到编译服务器用户根目录下，并修改根目录下的.profile 或者 .bashrc文件</p>
+<p>增加下面代码 source ~/git_completed，git_completed文件内容见附件
+2、配置提交注释模板</p>
+<p>将commit-msg.template.txt放置到编译服务器用户根目录下，并执行下面命令，git config --global commit.template ~/commit-msg.template.txt
+3、配置用户名和邮件</p>
+<p>git config --global  user.email  <email>
+git config --global  user.name  <name></p>
+<pre><code>1
+2
+</code></pre>
+<p>4、Git 中文乱码解决
+4.1、git status 乱码</p>
+<p>git config --global core.quotepath false
+4.2、git commit 乱码</p>
+<p>git config --global i18n.commitencoding utf-8
+4.3、git status 乱码</p>
+<p>git config --global i18n.logoutputencoding utf-8
+————————————————</p>
+<pre><code>                        版权声明：本文为博主原创文章，遵循 CC 4.0 BY 版权协议，转载请附上原文出处链接和本声明。
+</code></pre>
+<p>原文链接：https://blog.csdn.net/CrazyMo_/article/details/115278670</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>

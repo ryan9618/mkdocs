@@ -1,0 +1,2084 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Revin">
+      
+      
+      
+        <link rel="prev" href="../rust-vec/">
+      
+      
+        <link rel="next" href="../../python/68fun/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30">
+    
+    
+      
+        <title>Rust学习笔记之基础概念 - RevinBlog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rust" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="RevinBlog" class="md-header__button md-logo" aria-label="RevinBlog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RevinBlog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Rust学习笔记之基础概念
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="cyan"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="cyan"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Wcowin/mymkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Wcowin.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="RevinBlog" class="md-nav__button md-logo" aria-label="RevinBlog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    RevinBlog
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Wcowin/mymkdocs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Wcowin.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome Revivn MkDocs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tags/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tags
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/web/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tech notes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Tech notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_1_1" id="__nav_4_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Rust
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Rust
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Linux-rusthj/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux下超轻量级Rust开发环境搭建
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Rust-jgt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rust数据结构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Rust-lenbj/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rust学习笔记之基础概念
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rust-vec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rust数据结构用法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Rust学习笔记之基础概念
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Rust学习笔记之基础概念
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tages" class="md-nav__link">
+    <span class="md-ellipsis">
+      tages:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rust_notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rust_notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rustrust" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rust学习笔记之Rust环境配置和入门指南
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      你能所学到的知识点
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="你能所学到的知识点">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      变量与可变性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      变量和常量之间的不同
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      标量类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      整数类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      浮点数类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      布尔类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      字符类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      复合类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      元组类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      数组类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      访问数组的元素
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      非法的数组元素访问
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      函数体重的语句和表达式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1_2" id="__nav_4_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/68fun/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    68fun
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/dash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dash
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/py_qnotes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    用法查询笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/pylen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pylen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/python_20code/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    python_20code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/python_20code_y/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    python_20code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/rnlist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RNlist
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tools/itab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BookmarkSC百个收藏
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tools/rnbookmark20030312/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RNBookmark20030312
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_3" id="__nav_4_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Docker
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Docker
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tools/Docker/Docker-jc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker jc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tools/Docker/Docker-ml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker ml
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_4" id="__nav_4_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Git
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tools/Git/Gitml/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gitml
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_5" id="__nav_4_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Soft
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Soft
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tools/Soft/win10_win11irm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    win10_win11永久激活-这个工具轻
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Develop
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Develop
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../develop/markdown/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Markdown
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../develop/rusddev/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rusddev
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../develop/rustban-Cal/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rust版行事历
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tages" class="md-nav__link">
+    <span class="md-ellipsis">
+      tages:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rust_notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rust_notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rustrust" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rust学习笔记之Rust环境配置和入门指南
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      你能所学到的知识点
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="你能所学到的知识点">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      变量与可变性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      变量和常量之间的不同
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      标量类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      整数类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      浮点数类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      布尔类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      字符类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      复合类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      元组类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      数组类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      访问数组的元素
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      非法的数组元素访问
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      函数体重的语句和表达式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="rust">Rust学习笔记之基础概念</h1>
+<h3 id="tages">tages:</h3>
+<pre><code>- Rust
+- Rust学习笔记
+- Rust学习笔记之Rust环境配置和入门指南
+</code></pre>
+<h2 id="rust_notes">Rust_notes</h2>
+<h2 id="rustrust">Rust学习笔记之Rust环境配置和入门指南</h2>
+<h2 id="_1">你能所学到的知识点</h2>
+<pre><code>在macOS环境中安装Rust  「推荐阅读指数」 ⭐️⭐️⭐️⭐️⭐️
+构建一个Rust应用  「推荐阅读指数」 ⭐️⭐️⭐️
+编译和运行是两个不同的步骤  「推荐阅读指数」 ⭐️⭐️⭐️
+如何使用Cargo构建Rust应用 「推荐阅读指数」 ⭐️⭐️⭐️⭐️⭐️&quot;
+
+</code></pre>
+<h3 id="_2">变量与可变性</h3>
+<pre><code>在Rust中变量「默认是不可变」的。
+
+</code></pre>
+<p>当一个变量是不可变的时，一旦它被绑定到某个值上面，这个值就再也无法被改变。   </p>
+<pre><code>
+fn main(){
+  let x =7;
+  x = 8;
+}
+
+
+</code></pre>
+<p>保存并通过命令cargo run来运行代码，会提示如下错误： <br />
+图片这里提示我们cannot assign twice to immutable variable x（不能对不可变量x进行二次赋值） <br />
+变量默认是不可变的，但你可以通过在「声明的变量名称前」添加mut关键字来使其可变。   </p>
+<pre><code>fn main() {
+    let mut x =7;
+    println!(&quot;x的值是:{}&quot;,x);
+    x = 8;
+    println!(&quot;x的值是:{}&quot;,x);
+}
+
+</code></pre>
+<p>保存并通过命令cargo run来运行代码，输出结果如下：   </p>
+<pre><code>x的值是 7
+x的值是 8
+
+❝
+
+设计一个变量的可变性还需要考量许多因素。
+
+    当你在使用某些「重型数据结构」时，适当地使用可变性去修改一个实例，可能比赋值和重新返回一个新分配的实例更有效率
+    当数据结构较为轻量的时候，采用更偏向「函数式」的风格，通过创建新变量来进行赋值，可能会使代码更加易于理解。
+
+❞
+
+</code></pre>
+<h3 id="_3">变量和常量之间的不同</h3>
+<p>变量的不可变性可能会让你联想到另外一个常见的编程概念：「常量」。 <br />
+但是，「常量」和「变量」之间还存在着一些细微的差别   </p>
+<pre><code>❝
+
+    不能用mut关键字来修饰一个常量。
+        常量「不仅是默认不可变的，它还总是不可变」的
+    使用const关键字而不是let关键字来声明一个常量
+        在声明的同时，「必须显示地标注值的类型」
+    常量可以被声明在任何作用域中，甚至包括全局作用域。
+        这在一个值需要「被不同部分的代码共同引用」时十分有用
+    「只能将常量绑定到一个常量表达式上」，而无法将一个函数的返回值或其他需要在运行时计算的值绑定在常量上。
+
+❞
+
+</code></pre>
+<p>下面是声明常量的例子，数值100被绑定到了常量MAX_AGE上。在Rust中，约定俗成地使用「下划线分隔的全大写字母来命令一个常量」   </p>
+<pre><code>fn main() {
+    const MAX_AGE:u32 = 100;
+}
+
+
+</code></pre>
+<p>遮蔽 <br />
+在Rust中，一个「新的声明变量可以覆盖掉旧的同名变量」，我们把这一个现象描述为：「第一个变量被第二个变量遮蔽了」。这意味着随后使用这个名称时，它指向的将会是第二个变量。   </p>
+<pre><code>fn main() {
+   let x =5;
+
+   let x = x + 1;
+
+   let x = x * 2;
+
+   println!(&quot;x的值为:{}&quot;,x)
+}
+
+</code></pre>
+<pre><code>这段程序首先将x绑定到值为5上。
+随后它又通过重复let x =语句遮蔽了第一个x变量，并将第一个x变量值加上1的运行结果「绑定到新的变量」x上，此时x的值是6。
+第三个let语句同样遮蔽了第二个x变量，并将第二个x变量值乘以2的结果12绑定到第三个x变量上。
+
+</code></pre>
+<p>通过使用let，可以将对这个值执行一系列的「变换操作」，并允许这个变量在操作完成后保持自己的不可变性。   </p>
+<pre><code>❝
+
+遮蔽机制与mut的一个区别在于：由于重复使用let关键字会创建出「新的变量」，所以「可以在复用变量名称的同时改变它的类型」。
+❞
+
+</code></pre>
+<pre><code>fn main() {
+   let spaces:&amp;str = &quot;abc&quot;;
+   let spaces:usize= spaces.len();
+}
+
+
+</code></pre>
+<p>第一个 spaces 变量是一个字符串类型，第二个 spaces 变量是一个数字类型。</p>
+<h3 id="_4">数据类型</h3>
+<p>Rust中「每一个值都有其特定的数据类型」，Rust会根据数据的类型来决定应该如何处理它们。 <br />
+我们来介绍两种不同的数据类型子集：标量类型和复合类型。   </p>
+<pre><code>❝
+
+Rust是一门「静态类型语言」，这意味着它在「编译程序」的过程中需要知道所有变量的具体类型。
+❞
+
+</code></pre>
+<p>在大部分情况下，编译器都可以根据我们如何绑定、使用变量的值来「自动推导」出变量的类型。但是，在某些时候，当发生数据类型的转换时候，就需要「显示」地添加一个类型标注。 <br />
+下面的test变量是将String类型转换为数值类型。 <br />
+let test:u32 = "42".parse().expect("非数值类型")   </p>
+<h3 id="_5">标量类型</h3>
+<pre><code>❝
+
+标量类型是「单个值」类型的统称。
+❞
+
+</code></pre>
+<p>在Rust中内建了4种基础的标量类型：   </p>
+<pre><code>整数
+浮点数
+布尔值
+字符
+
+</code></pre>
+<h3 id="_6">整数类型</h3>
+<p>整数是指那些「没有小数部分的数字」。在Rust中存在如下内建整数类型，每一个长度不同的值都存在「有符号」和「无符号」两种变体。
+长度 有符号 无符号   </p>
+<pre><code>8-bit i8 u8
+16-bit i16 u16
+32-bit i32（Rust默认） u32
+64-bit i64 u64
+arch isize usize
+
+</code></pre>
+<p>每一个整数类型的变体都会标明自身是否存在符号，并且拥有一个明确的大小。「有符号和无符号代表了一个整数类型是否拥有描述负数的能力」。 <br />
+换句话说，   </p>
+<pre><code>对于「有符号」的整数类型来讲，数值需要一个符号来表示当前是否为正
+    有符号数是通过「二进制补码」的形式进行存储的
+对于「无符号」的整数来讲，「数值永远为正」，不需要符号
+
+❝
+
+    对于一个位数为n的有符号整数类型，它可以存储从-(2n-1)到(2n-1-1)范围内的「所有整数」。
+    而对于无符号整数类型而言，则可以存储从0到(2n-1)范围内的「所有整数」。
+
+❞
+
+</code></pre>
+<p>除了指明位数的类型，还有isize和usize两种特殊的整数类型，它们的长度取决于程序运行的目标平台。   </p>
+<pre><code>在64位架构上，它们就是64位的
+在32位架构上，它们就是32位的
+
+</code></pre>
+<p>Rust对于整数字面量的「默认推导类型」i32通常就是一个很好的选择：它在大部分情形下都是运算速度最快的那一个。   </p>
+<pre><code>❝
+
+当Rust发生整数溢出时候，会执行「二进制补码环绕」。也就是说，「任何超出类型最大值的整数都会被环绕为类型最小值」。
+❞
+
+</code></pre>
+<h3 id="_7">浮点数类型</h3>
+<p>Rust还提供了两种基础的浮点数类型，「浮点数也就是带小数点的数字」。这两种类型是f32和f64，它们分别占用了32位和64位空间。   </p>
+<pre><code>❝
+
+在Rust中，默认会将浮点数字面量的类型推导为f64。
+❞
+
+</code></pre>
+<p>Rust的浮点数使用了IEEE-754标准来进行表述，f32和f64类型分别对应这标准中的「单精度」和「双精度浮点数」。</p>
+<h3 id="_8">布尔类型</h3>
+<p>Rust的布尔类型只拥有两个可能的值true和false，它「只会占据单个字节的空间大小」。使用bool来表示一个布尔类型。   </p>
+<pre><code>fn main(){
+  let t = true;
+
+  let f:bool = false;
+}
+
+</code></pre>
+<h3 id="_9">字符类型</h3>
+<p>在Rust中，char类型被用于描述语言中最基础的「单个字符」。 <br />
+``   </p>
+<pre><code>fn main(){
+  let c = 'a';
+}
+
+</code></pre>
+<pre><code>❝
+
+char类型使用「单引号」指定，字符串使用「双引号」指定。
+❞
+
+</code></pre>
+<p>在Rust中char类型「占4字节」，是一个Unicode标量值，这意味着它可以表示比ASCII多的字符内容。</p>
+<h3 id="_10">复合类型</h3>
+<p>复合类型可以「将多个不同类型的值组合为一个类型」。在Rust提供了两个「内置」的基础复合类型：元组和数组</p>
+<h3 id="_11">元组类型</h3>
+<p>元组可以将其他「不同类型的多个值」组合进一个复合类型中。元组还拥有一个固定的长度：你「无法在声明结束后增加或减少其中的元素数量」。 <br />
+为了创建元组，需要把一系列的值使用「逗号分隔」后放置到一对「圆括号」中。元组「每个位置都有一个类型」，这些类型不需要是相同的。   </p>
+<pre><code>fn main(){
+  let tup:(i32,f64,u8) = (500,7.8,1);
+}
+
+</code></pre>
+<p>由于一个元组也被视为一个「单独的复合元素」，所以这里的变量tup被绑定到了整个元组上。为了从元组中获得单个的值，可以使用「模式匹配」来解构元组 <br />
+fn main(){
+let tup:(i32,f64,u8) = (500,7.8,1); <br />
+let (x,y,z) = tup;
+} <br />
+除了解构，还可以通过「索引」并使用点号(.)来访问元组中的值。 <br />
+fn main(){
+let tup:(i32,f64,u8) = (500,7.8,1); <br />
+let firstValue = x.0;
+let secondValue = x.1;
+}   </p>
+<h3 id="_12">数组类型</h3>
+<p>我们同样可以在数组中存储多个值的集合。与元组不同，「数组中每一个元素都必须是相同类型」。 Rust中「数组拥有固定的长度，一旦声明就再也不能随意更改大小」。 <br />
+fn main(){
+let a = [1,2,3,4,5];
+} <br />
+当然，Rust标准库也提供了一个更加灵活的动态数组：它是一个类似于数组的集合结构，但它允许用户自由的调整数组的长度。这个我们后面的章节会有详细介绍。 <br />
+为了写出数组的类型，你可以使用一对「方括号」，并在方括号中填写数组内所有元素的类型，「一个分号及数组内元素的数量」。 <br />
+fn main(){
+let a:[i32;5] = [1,2,3,4,5];
+} <br />
+另外还有一种更简便的初始化数组的方式。在「方括号中指定元素的值并接着填入一个分号及数组的长度」。 <br />
+fn main(){
+let a =[3;5];
+} <br />
+以a命令的数组将会拥有5个元素，而这些元素全部拥有相同的「初始值」3。</p>
+<h3 id="_13">访问数组的元素</h3>
+<p>数组是「一整块分配在栈上的内存组成」，可以通过「索引」来访问一个数组中所有元素。 <br />
+fn main(){
+let a =[1,2,3,4,5]; <br />
+let frist = a[0];
+let second = a[1];
+}   </p>
+<h3 id="_14">非法的数组元素访问</h3>
+<p>存在如下代码 <br />
+fn main() {
+let a = [1,2,3,4,5];
+let index = 10;
+let item = a[index];
+} <br />
+使用cargo run运行这段代码，会发现程序顺利的通过「编译」，会在「运行时」因为错误而奔溃退出：
+图片 <br />
+实际上，每次通过索引来访问一个元素时，Rust都会检查这个索引是否小于当前数组的长度。假如索引超出了当前数组的长度，Rust就会发生panic。
+函数 <br />
+Rust代码使用蛇形命名法 来作为规范函数和变量名称的风格。蛇形命名法「只使用小写的字母进行命名，并以下画线分隔单词」。 <br />
+fn main() {
+another_function()
+} <br />
+fn another_function(){
+println!("函数调用")
+}   </p>
+<pre><code>❝
+
+在Rust中，函数定义以fn关键字开始并紧随函数名称与一对圆括号，还有一对花括号用于标识函数体开始和结尾的地方。
+❞
+
+</code></pre>
+<p>可以使用函数名加圆括号的方式来调用函数。Rust不关心在何处定义函数，只要这些定义对于「使用区域」是可见的既可。
+函数参数 <br />
+还可以在函数声明中定义参数,它们是一种「特殊的变量，并被视作函数签名的一部分」。当函数存在参数时，你需要在「调用函数时为这些变量提供具体的值」。 <br />
+fn main() {
+another_function(5)
+} <br />
+fn another_function(x:i32){
+println!("传入函数的变量为:{}",x)
+}   </p>
+<pre><code>❝
+
+在函数签名中，你「必须显示地声明每个参数的类型」。
+❞
+
+</code></pre>
+<h3 id="_15">函数体重的语句和表达式</h3>
+<p>函数体由若干语句组成，并可以「以一个表达式作为结尾」。由于Rust是一门「基于表达式」的语言，所以它将语句和表达式区别为两个不同的概念。   </p>
+<pre><code>「语句」指那些执行操作但不返回值的指令
+「表达式」是指会进行计算并产生一个值作为结果的指令
+
+</code></pre>
+<p>使用let关键字创建变量并绑定值时使用的指令是一条「语句」。 <br />
+fn main(){
+let y = 6;
+} <br />
+这里的函数定义同样是语句，甚至上面整个例子本身也是一条语句。   </p>
+<pre><code>❝
+
+「语句」不会返回值
+❞
+
+</code></pre>
+<p>因此，在Rust中，不能将一条let语句赋值给另一个变量。 <br />
+如下代码会产生「编译时」错误。 <br />
+fn main(){
+let x = (let y =6);
+} <br />
+与语句不同，「表达式会计算出某个值来作为结果」。另外，表达式也可以作为语句的一部分。   </p>
+<pre><code>调用函数是表达式
+调用宏是表达式
+用创建新作用域的花括号({})同样也是表达式
+
+</code></pre>
+<p>fn main(){
+let x =5; <br />
+①let y = {②
+let x =3;
+③ x + 1
+}; <br />
+} <br />
+表达式②是一个代码块，它会计算出4作为结果。而这个结果会作为let语句①的一部分被绑定到变量y上。
+函数的返回值 <br />
+函数可以向调用它的代码返回值。需要在箭头符号(-&gt;)的后面声明它的类型。   </p>
+<pre><code>❝
+
+在Rust中，「函数的返回值等同于函数体的最后一个表达式」。
+❞
+
+可以使用return关键字并指定一个值来提前从函数中返回
+但大多数函数都「隐式」地返回了最后的表达式
+
+</code></pre>
+<p>fn five() -&gt;i32{
+5
+}
+fn main() {
+let x = five();
+println!("子函数返回的值为:{}",x)
+} <br />
+如上的代码中，five函数的返回值类型通过-&gt; i32被指定了。five函数中的5就是函数的输出值，这也就是它的返回类型会被声明为i32的原因。
+控制流 <br />
+在Rust中用来控制程序执行流的结构主要是if表达式和循环表达式。
+if表达式 <br />
+if表达式允许根据「条件执行不同的代码分支」。 <br />
+fn main() {
+let number = 3;
+if number &lt;5 {
+println!("满足条件")
+}else{
+println!("不满足条件")
+}
+} <br />
+所有的if表达式都会使用if关键字来开头，并紧随一个「判断条件」。其后的花括号中放置了条件为真时需要执行的代码片段。if表达式中与条件相关联的代码块被称为分支   </p>
+<pre><code>❝
+
+条件表达式「必须」产生一个bool类型的值，否则会触发「编译错误」
+❞
+
+</code></pre>
+<p>在Rust中不会「自动尝试」将非布尔类型的值转换为布尔类型。必须「显示」地在if表达式中提供一个「布尔类型作为条件」。
+在let 语句中使用if <br />
+由于if是一个表达式，所以可以在let语句的「右侧」使用它来生成一个值。 <br />
+fn main() {
+let condition = true; <br />
+let number = if condition {
+5
+} else {
+6
+};
+println!("number的值为:{}",number)
+}   </p>
+<pre><code>❝
+
+代码块输出的值就是其中「最后一个表达式的值」。另外，数字本身也可以作为一个表达式使用。
+❞
+
+</code></pre>
+<p>上面的例子中，整个if表达式的值取决于究竟哪一个代码块得到执行。   </p>
+<pre><code>❝
+
+「所有」if分支可能返回的值都「必须是一种类型」。
+❞
+
+</code></pre>
+<p>使用循环重复执行代码 <br />
+Rust提供了多种循环工具。一个循环会执行循环体中的代码直到结尾，并紧接着回到开头继续执行。 <br />
+Rust提供了3种循环   </p>
+<pre><code>loop
+while
+for
+
+</code></pre>
+<p>使用loop重复执行代码 <br />
+可以使用loop关键字来指示Rust反复执行某一块代码，直到「显示」地声明退出为止。
+<code>fn main() { loop { println!("重复执行") } }</code> <br />
+运行这段程序时，除非「手动强制退出程序」，否则重复执行字样会被反复输出到屏幕中。
+从loop循环中返回值 <br />
+loop循环可以被用来反复尝试一些可能会失败的操作，有时候也需要将操作的结果传递给余下的代码。我们可以「将需要返回的值添加到break表达式后面」，也就是用来终止循环表达式后面。 <br />
+`fn main() {
+let mut counter = 0;
+let result =  loop {
+counter +=1;   </p>
+<pre><code>  if counter ==10 {
+    break counter *2;
+  }
+
+</code></pre>
+<p>};
+println!("result的值为:{}",result)
+}` <br />
+上面的代码中，当counter值为10时候，就会走break语句，返回counter *2。并将对应的值返回给result。
+while 条件循环 <br />
+另外一种常见的循环模式是「在每次执行循环体之前都判断一次条件」，假如条件为真则执行代码片段，假如条件为假或执行过程中碰到break就退出当前循环。 <br />
+`fn main() {
+let mut counter = 3;   </p>
+<pre><code>while counter!=0{
+    println!(&quot;{}&quot;,counter);
+    counter = counter -1;
+}
+
+</code></pre>
+<p>}` <br />
+使用for来循环遍历集合 <br />
+fn main() {
+let a = [1,2,3,4,5];
+for element in a.iter() {
+println!("当前的值为{}",element)
+}
+} <br />
+for循环的安全性和简洁性使它成为Rust中最为常用的循环结构。   </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>
