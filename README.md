@@ -2,10 +2,10 @@
 # [Navigtion]
 
 
-## |||[Home](/docs/index.md)
+## |||[Home](docs/index.md)
 
-- [好用网在分享享:](/docs/blog/Tools/rnbookmark20030312.md)  
-- [Py用法查询笔记 :](/docs/blog/Tech-notes/python/py_qnotes.md)
+- [好用网在分享享:](docs/blog/Tools/rnbookmark20030312.md)  
+- [Py用法查询笔记 :](docs/blog/Tech-notes/python/py_qnotes.md)
 
  
 
