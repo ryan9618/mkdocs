@@ -17,9 +17,8 @@
       - Docker
       - Ollama
 
-   - 关于:
-   - 联系方式: about/web.md
-   - 网站制作: about/web.md
+
+
 
 
 
