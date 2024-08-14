@@ -48,7 +48,7 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
     - [Linux下超轻量级Rust开发环境搭建:blog/Tech-notes/Rust/Linux-rusthj.md:](blog/Tech-notes/Rust/Linux-rusthj.md)
     - [Rust学习笔记之基础概念: blog/Tech-notes/Rust/Rust-lenbj.md:](blog/Tech-notes/Rust/Rust-lenbj.md)
     - [Rust数据结构/元编程: blog/Tech-notes/Rust/Rust-jgt.md](blog/Tech-notes/Rust/Rust-jgt.md)
-    - [Rust数据结构用法/深入理解Rust中的元编程:blog/Tech-notes/Rust/rust_notes.md](blog/Tech-notes/Rust/rust-vec.md)
+    - [Rust数据结构用法/深入理解Rust中的元编程:blog/Tech-notes/Rust/rust-vec.md](blog/Tech-notes/Rust/rust-vec.md)
 
 
 
