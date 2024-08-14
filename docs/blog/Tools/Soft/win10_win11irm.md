@@ -1,5 +1,7 @@
 # win10\_win11永久激活-这个工具轻   
-   
+   ### tages:
+     - win10
+     - Soft
    
 ```
 win10、win11永久激活-这个工具轻松搞定（5月29日更新）   一 数字权利激活（Digital License Activation）  三 KMS38 四 Win11/10激活  -----------5月29日更新---

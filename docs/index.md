@@ -67,7 +67,7 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
     - [Git极简操作指南: d(blog/Tools/Git/Gitml.md)](blog/Tools/Git/Gitml.md)
 - Soft
   - [win11资源分享:blog/Tools/Soft/win10_win11irm.md](blog/Tools/Soft/win10_win11irm.md)
-
+  - [Linux常用软件:blog/Tools/Soft/linux_soft.md](blog/Tools/Soft/linux_soft.md)
 
 
    - ### 关于:
