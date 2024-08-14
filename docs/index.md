@@ -30,55 +30,48 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
    - [Mac/windows软件网站汇总:](blog/Tools/rnbookmark20030312.md)
    - [win11资源分享:blog/Tools/Soft/win10_win11irm.md](blog/Tools/Soft/win10_win11irm.md)
    - [Web常用、频道、国内镜像、大模型-工具分享: blog/Tools/soft/itab.md):](blog/Tools/rnbookmark20030312.md)
-   - [Mac/windows软件网站汇总:](blog/Tools/rnbookmark20030312.md)
-   - [Mac/windows软件网站汇总:](blog/Tools/rnbookmark20030312.md)
 
 
 
+   - Python语言:
+
+     - [Linux下Dash开发环境搭建:blog/Tech-notes/python/dash.md](blog/Tech-notes/python/dash.md)
+     - [Python用法查询笔记:blog/Tech-notes/python/py_qnotes.md](blog/Tech-notes/python/py_qnotes.md)
+     - [pylen练习:blog/Tech-notes/python/pylen.md](blog/Tech-notes/python/pylen.md)
+     - [20个非常有用的Python单行代码及库:blog/Tech-notes/python/python_20code.md](blog/Tech-notes/python/python_20code.md)
+     - [68个Python内置函数 :blog/Tech-notes/python/68fun.md](blog/Tech-notes/python/68fun.md)
+     - [Py示例随记/模块/包和库:blog/Tech-notes/python/rnlist.md](blog/Tech-notes/python/rnlist.md)
 
 
 
-   - Rust语言:
-     - [Linux下超轻量级Rust开发环境搭建:blog/Tech-notes/Rust/Linux-rusthj.md:](blog/Tech-notes/Rust/Linux-rusthj.md)
-     - [Rust_notes: blog/Tech-notes/Rust/rust_notes.md:](blog/Tech-notes/Rust/rust_notes.md)
+  - Rust语言:
+    - [Linux下超轻量级Rust开发环境搭建:blog/Tech-notes/Rust/Linux-rusthj.md:](blog/Tech-notes/Rust/Linux-rusthj.md)
+    - [Rust学习笔记之基础概念: blog/Tech-notes/Rust/Rust-lenbj.md:](blog/Tech-notes/Rust/Rust-lenbj.md)
+    - [Rust数据结构/元编程: blog/Tech-notes/Rust/Rust-jgt.md](blog/Tech-notes/Rust/Rust-jgt.md)
+    - [Rust学习笔记之基础概念: blog/Tech-notes/Rust/rust-vec.md](blog/Tech-notes/Rust/rust-vec.md)
+    - [Rust数据结构用法/深入理解Rust中的元编程:blog/Tech-notes/Rust/rust_notes.md](blog/Tech-notes/Rust/rust_notes.md)
 
- nav: 
-   - Home: index.md
-   - 好用网在分享享: tools/rnbookmark20030312.md
-   - What is Github: about/web.md
-   - Mac/windows软件网站汇总:
-   - win11资源分享: soft/win10_win11irm.md
-   - Web常用、频道、国内镜像、大模型-工具分享: tools/soft/itab.md
-   - python:
-     - 20个非常有用的Python单行代码: blog/Tech-notes/Python/python_20code_y.md
-     - Py示例随记: blog/Tech-notes/python/rnlist.md
-     - 68个Py内置函数: blog/Tech-notes/python/68fun.md
-     - Py练习: blog/Tech-notes/python/pylen.md
-     - Dash及Py虚拟环境搭建:blog/Tech-notes/python/dash.md
-     - Rust语言:
-       - Linux下超轻量级Rust开发环境搭建:blog/Tech-notes/Rust/Linux-rusthj.md
-       - Rust\_notes: blog/Tech-notes/Rust/rust_notes.md
-   - kexueshangwang: 
-   - python: develop/markdown.md
-   - Rust: develop/rusddev.md
-   - Rust版行事历: develop/rustban-xing-shi-li.md
-   - 良心软件: develop/fenxiang.md
-   - 写给所有 Mac 用户的摸鱼指北: 
-   - Life-notes:
-     - 原神
-     - 诗文
-     - 滕王阁序
-     - 望江南·超然台作
-     - 击鼓
-     - 雨霖铃·秋别
-   - Tools:
-      - Temp-Later
-      - Github
-      - Gitee
-      - Docker
-      - Ollama
 
-   - ##### 关于:
+
+- Develop:
+ - [Markdown开发: docs/develop/markdown.md](docs/develop/markdown.md)
+ - [Python开发: docs/develop/pydev.md)](docs/develop/pydev.md)
+ - [Rust开发: docs/develop/rusddev.md](docs/develop/rusddev.md)
+ - [Rust版行事历：docs/develop/rustban-Cal.md](docs/develop/rustban-Cal.md)
+ 
+
+- Tools:
+  - Docker:
+    - [Docker基础知识: docs/blog/Tools/Docker/Docker-jc.md:](docs/blog/Tools/Docker/Docker-jc.md)
+    - [DDocker容器常用命令: docs/blog/Tools/Docker/Docker-ml.md:](docs/blog/Tools/Docker/Docker-ml.md)
+  - Git
+    - [Git极简操作指南: d(blog/Tools/Git/Gitml.md)](blog/Tools/Git/Gitml.md)
+- Soft
+  - [win11资源分享:blog/Tools/Soft/win10_win11irm.md](blog/Tools/Soft/win10_win11irm.md)
+
+
+
+   - ### 关于:
 
 
 

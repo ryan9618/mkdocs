@@ -67,5 +67,12 @@ conda create -n dash-devs python=3.8 -c https://mirrors.aliyun.com/anaconda/pkgs
 ```
 
 
+或者
+mamba env list
+
+mamba create -n dash-app python=3.8 -y
+mamba activate dash-app
+
+
 
 ```
